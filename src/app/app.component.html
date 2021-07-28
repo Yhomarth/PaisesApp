@@ -8,9 +8,22 @@
         <hr>
 
         <ul class="list-group">
-            <li class="list-group-item">Por país</li>
-            <li class="list-group-item">Por región</li>
-            <li class="list-group-item">Por carpital</li>
+            <li 
+                class="list-group-item"
+                routerLink=""
+                [routerLinkActiveOptions] = "{ exact : true }"
+                routerLinkActive="active"
+                >Por país</li>
+            <li 
+                class="list-group-item"
+                routerLink="region"
+                routerLinkActive="active"
+                >Por región</li>
+            <li 
+                class="list-group-item"
+                routerLink="capital"
+                routerLinkActive="active"
+            >Por carpital</li>
         </ul>
     </div>
 
