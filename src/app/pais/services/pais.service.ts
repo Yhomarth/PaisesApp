@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+//import { Observable, of } from 'rxjs';
+// import { catchError } from 'rxjs/operators'
 
 
 @Injectable({
@@ -14,7 +16,9 @@ export class PaisService {
 
   buscarPais( termino: string ) :Observable<any> {
     const url: string = `${this.urlApi}/name/${termino}`;
-    return this.http.get(  url   );
+    // return this.http.get(  url   ).pipe( catchError(  (err)=> of( [ ]  )  ));
+
+    return this.http.get(url);
 
 
   }
