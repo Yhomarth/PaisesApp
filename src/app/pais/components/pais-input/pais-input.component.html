@@ -1,0 +1,12 @@
+<form (ngSubmit)="buscar()" >
+
+    <input 
+        type="text"
+        placeholder="buscar por pais"
+        autocomplete="off"
+        class="form-control"
+        [(ngModel)]="termino"
+        [ngModelOptions]="{standalone: true}"
+    >
+
+</form>
