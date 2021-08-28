@@ -14,6 +14,8 @@ export class PorPaisComponent{
   hayError: boolean = false;
   paises : Country[] = [];
 
+  placeholder: string = 'Buscar por Pais';
+
   constructor( private paisService: PaisService  ) { }
 
   buscar(termino: string) {
@@ -30,11 +32,11 @@ export class PorPaisComponent{
         this.hayError = true;
         this.paises = [];
       }
-    )
+    );
+  }
 
-
-    
-
+  sugerencia( termino: string ){
+    this.hayError = false;
 
   }
 
