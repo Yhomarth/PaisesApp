@@ -25,7 +25,7 @@ const routes : Routes = [
     },
 
     {
-        path : 'ver/:id',
+        path : 'pais/:id',
         component : VerPaisComponent
     },
 
