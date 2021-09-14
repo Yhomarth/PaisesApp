@@ -29,6 +29,12 @@ export class PaisService {
     return this.http.get<Country[]>(url);
   }
 
+  buscarPorRegion(region: string):Observable<Country[]>{
+    //https://restcountries.eu/rest/v2/region/{region}
+    const url: string =`${this.urlApi}/region/${region}`;
+    return this.http.get<Country[]>(url);
+  }
+
   getPaisPorAlpha(id: string): Observable<Country>{
     const url: string = `${this.urlApi}/alpha/${id}`;
     return this.http.get<Country>(url);
