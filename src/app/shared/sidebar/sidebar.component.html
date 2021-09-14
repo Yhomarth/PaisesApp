@@ -6,7 +6,7 @@
     <li *ngFor="let opcion of opciones; let i = index" 
     class="list-group-item"
     [routerLink]="opcion.ruta"    
-    [routerLinkActiveOptions] = "{ exact : (i === 0) ? true : false }"
+    [routerLinkActiveOptions] = "{ exact : (i === 0)  }"
     routerLinkActive="active"
     (click)= "animar(opcion.titulo)"
     [ngClass] = "getClaseCSS(opcion.titulo)"
