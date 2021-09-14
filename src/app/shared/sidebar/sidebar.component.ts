@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,15 +8,43 @@ import { Component, OnInit } from '@angular/core';
       li {
         cursor : pointer;
       }
-    
     `
   ]
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent  {
 
-  constructor() { }
+  opcionActiva: string = '';
+  
+  opciones: TipoOpciones[] = [
+    {
+      ruta : '',
+      titulo : 'Por País'
+    }, 
+    {
+      ruta: 'region',
+      titulo: 'Por Región'
+    },
+    {
+      ruta: 'capital',
+      titulo: 'Por Capital'
+    }
+  ];
+  
+  constructor() { } 
 
-  ngOnInit(): void {
+
+  animar(opcion: string){
+    if(opcion === this.opcionActiva) {return;}
+    this.opcionActiva = opcion;
   }
 
+  getClaseCSS(opcion:string) {
+    return this.opcionActiva == opcion ? 'animate__animated animate__bounce' : '';
+  }
+
+}
+
+type TipoOpciones = {
+  titulo : string,
+  ruta : string
 }
